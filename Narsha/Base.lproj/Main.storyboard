@@ -12,7 +12,7 @@
         <scene sceneID="9A8-Ce-rYj">
             <objects>
                 <navigationController id="yF8-X1-Wjk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="음식점" id="hBV-r9-wg0"/>
+                    <tabBarItem key="tabBarItem" title="음식점" image="food" id="hBV-r9-wg0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0qV-8F-A8g">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -38,11 +38,85 @@
                     <connections>
                         <segue destination="yF8-X1-Wjk" kind="relationship" relationship="viewControllers" id="Qo0-Hz-9Fl"/>
                         <segue destination="YTO-HL-I9H" kind="relationship" relationship="viewControllers" id="PIe-Sm-nFv"/>
+                        <segue destination="zu5-zF-Kk7" kind="relationship" relationship="viewControllers" id="QB7-Ib-qEg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RT3-ql-rJn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1551" y="-242"/>
+        </scene>
+        <!--마트-->
+        <scene sceneID="vvb-PZ-HVg">
+            <objects>
+                <tableViewController id="EIv-yO-O0o" customClass="MartVC" customModule="Narsha" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="RWX-8Z-bDm">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="15" reuseIdentifier="customcell" rowHeight="85" id="XDG-V7-GbI" customClass="customCell" customModule="Narsha" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.333332061767578" width="350" height="85"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XDG-V7-GbI" id="vaF-KH-hiq">
+                                    <rect key="frame" x="0.0" y="0.0" width="350" height="85"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3lM-Uh-4sS">
+                                            <rect key="frame" x="10" y="10" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="65" id="2H1-HO-GC6"/>
+                                                <constraint firstAttribute="height" constant="65" id="jHQ-I8-4MN"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gK-Hg-MzL">
+                                            <rect key="frame" x="105" y="27" width="90" height="31.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1gK-Hg-MzL" firstAttribute="centerY" secondItem="vaF-KH-hiq" secondAttribute="centerY" id="3gN-Ym-TpL"/>
+                                        <constraint firstItem="1gK-Hg-MzL" firstAttribute="leading" secondItem="3lM-Uh-4sS" secondAttribute="trailing" constant="30" id="8yy-ob-3cU"/>
+                                        <constraint firstItem="3lM-Uh-4sS" firstAttribute="leading" secondItem="vaF-KH-hiq" secondAttribute="leading" constant="10" id="DNT-BX-fr9"/>
+                                        <constraint firstItem="3lM-Uh-4sS" firstAttribute="top" secondItem="vaF-KH-hiq" secondAttribute="top" constant="10" id="NNa-Uv-DRb"/>
+                                        <constraint firstAttribute="bottom" secondItem="3lM-Uh-4sS" secondAttribute="bottom" constant="10" id="dRZ-tB-3ap"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellimg" destination="3lM-Uh-4sS" id="EgX-XJ-vf9"/>
+                                    <outlet property="name" destination="1gK-Hg-MzL" id="aXX-SC-3CB"/>
+                                    <segue destination="y92-Yy-bwZ" kind="show" id="Gse-tX-e6t"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EIv-yO-O0o" id="JEg-fT-nfA"/>
+                            <outlet property="delegate" destination="EIv-yO-O0o" id="0N1-og-wpe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="마트" id="ccY-D9-M57"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EDi-ud-vOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="-906"/>
+        </scene>
+        <!--마트-->
+        <scene sceneID="td9-fe-lhE">
+            <objects>
+                <navigationController id="zu5-zF-Kk7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="마트" image="mart" landscapeImage="mart" id="Ydi-Sz-r05"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="brX-jI-s1f">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EIv-yO-O0o" kind="relationship" relationship="rootViewController" id="4yu-ai-eP2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKY-eW-hit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-488" y="-906"/>
         </scene>
         <!--카페-->
         <scene sceneID="Ldg-3i-XGm">
@@ -104,7 +178,7 @@
         <scene sceneID="Rsz-91-tvS">
             <objects>
                 <navigationController id="YTO-HL-I9H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="카페" id="V7T-xI-6hc"/>
+                    <tabBarItem key="tabBarItem" title="카페" image="cafe" id="V7T-xI-6hc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iwz-xT-aon">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -204,13 +278,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzi-UQ-68y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451" y="118"/>
+            <point key="canvasLocation" x="1514" y="-191"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rme-91-Ipd"/>
+        <segue reference="Gse-tX-e6t"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="cafe" width="10" height="20"/>
+        <image name="food" width="20" height="20"/>
+        <image name="mart" width="23" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

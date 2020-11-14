@@ -10,6 +10,7 @@
 		114A9BCE2C6926BBEF41C38A /* Pods_Narsha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118FD97F9120C50D8397AB28 /* Pods_Narsha.framework */; };
 		62553B33255E43540058EFBE /* CafeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62553B32255E43540058EFBE /* CafeVC.swift */; };
 		625A74C6255ED72500565A21 /* detailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625A74C5255ED72500565A21 /* detailVC.swift */; };
+		625A74D1255FCDB900565A21 /* MartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625A74D0255FCDB900565A21 /* MartVC.swift */; };
 		62C38AB3255AADFB0095A473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C38AB2255AADFB0095A473 /* AppDelegate.swift */; };
 		62C38AB5255AADFB0095A473 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C38AB4255AADFB0095A473 /* SceneDelegate.swift */; };
 		62C38ABA255AADFB0095A473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C38AB8255AADFB0095A473 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		343EF88E84342EEA2E485575 /* Pods-Narsha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Narsha.release.xcconfig"; path = "Target Support Files/Pods-Narsha/Pods-Narsha.release.xcconfig"; sourceTree = "<group>"; };
 		62553B32255E43540058EFBE /* CafeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeVC.swift; sourceTree = "<group>"; };
 		625A74C5255ED72500565A21 /* detailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailVC.swift; sourceTree = "<group>"; };
+		625A74D0255FCDB900565A21 /* MartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MartVC.swift; sourceTree = "<group>"; };
 		62C38AAF255AADFB0095A473 /* Narsha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Narsha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C38AB2255AADFB0095A473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62C38AB4255AADFB0095A473 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				62C38AD0255AAF300095A473 /* RestVC.swift */,
 				62553B32255E43540058EFBE /* CafeVC.swift */,
 				625A74C5255ED72500565A21 /* detailVC.swift */,
+				625A74D0255FCDB900565A21 /* MartVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				62C38ABD255AADFB0095A473 /* Narsha.xcdatamodeld in Sources */,
 				62C38ACD255AAED10095A473 /* customCell.swift in Sources */,
 				62553B33255E43540058EFBE /* CafeVC.swift in Sources */,
+				625A74D1255FCDB900565A21 /* MartVC.swift in Sources */,
 				62C38AB3255AADFB0095A473 /* AppDelegate.swift in Sources */,
 				625A74C6255ED72500565A21 /* detailVC.swift in Sources */,
 				62C38AB5255AADFB0095A473 /* SceneDelegate.swift in Sources */,
@@ -395,7 +399,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.Narsha.guji;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.narsha.guji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -416,7 +420,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.Narsha.guji;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.narsha.guji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
