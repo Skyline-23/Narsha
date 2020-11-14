@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 class RestVC: UITableViewController {
-    
+    let delegate = UIApplication.shared.delegate as? AppDelegate
     var value: NSArray = []
 
     override func viewDidLoad() {
@@ -56,12 +56,13 @@ class RestVC: UITableViewController {
         // cell identifier를 지정하고 재사용 큐로 지정함.
         let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath) as! customCell
         
+        //섹션에 맞는 value값에서 string형식으로 image_url을 받아옴
+        let img_url = (value[indexPath.section] as! NSDictionary)["image_url"] as! String
+        let urlStr: String = "http://guji.c2a.kr\(img_url)"
+        let placeholder: UIImage? = UIImage.init(named: "placeholder.png")
+        
         // 인덱스페스 섹션으로 셀 이미지당 태그를 만듬
         cell.cellimg.tag = indexPath.section
-        
-        let img_url = (value[indexPath.section] as? NSDictionary)?["image_url"] as? String
-        let urlStr: String = "http://guji.c2a.kr\(img_url!)"
-        let placeholder: UIImage? = UIImage.init(named: "placeholder.png")
         
         // 이미지를 받아옴
         cell.cellimg.imageFromURL(urlString: urlStr, placeholder: placeholder) {
@@ -83,7 +84,9 @@ class RestVC: UITableViewController {
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.data = value[indexPath.section] as? NSDictionary
+    }
 
     /*
     // Override to support conditional editing of the table view.

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		114A9BCE2C6926BBEF41C38A /* Pods_Narsha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118FD97F9120C50D8397AB28 /* Pods_Narsha.framework */; };
 		62553B33255E43540058EFBE /* CafeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62553B32255E43540058EFBE /* CafeVC.swift */; };
+		625A74C6255ED72500565A21 /* detailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625A74C5255ED72500565A21 /* detailVC.swift */; };
 		62C38AB3255AADFB0095A473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C38AB2255AADFB0095A473 /* AppDelegate.swift */; };
 		62C38AB5255AADFB0095A473 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C38AB4255AADFB0095A473 /* SceneDelegate.swift */; };
 		62C38ABA255AADFB0095A473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C38AB8255AADFB0095A473 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		118FD97F9120C50D8397AB28 /* Pods_Narsha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Narsha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		343EF88E84342EEA2E485575 /* Pods-Narsha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Narsha.release.xcconfig"; path = "Target Support Files/Pods-Narsha/Pods-Narsha.release.xcconfig"; sourceTree = "<group>"; };
 		62553B32255E43540058EFBE /* CafeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeVC.swift; sourceTree = "<group>"; };
+		625A74C5255ED72500565A21 /* detailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailVC.swift; sourceTree = "<group>"; };
 		62C38AAF255AADFB0095A473 /* Narsha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Narsha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C38AB2255AADFB0095A473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62C38AB4255AADFB0095A473 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		625A74C4255ED69700565A21 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				62C38ACC255AAED10095A473 /* customCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		62C38AA6255AADFB0095A473 = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +89,7 @@
 			children = (
 				62C38AB2255AADFB0095A473 /* AppDelegate.swift */,
 				62C38AB4255AADFB0095A473 /* SceneDelegate.swift */,
-				62C38ACC255AAED10095A473 /* customCell.swift */,
+				625A74C4255ED69700565A21 /* cell */,
 				62C38ACB255AAEA80095A473 /* Controllers */,
 				62C38AB8255AADFB0095A473 /* Main.storyboard */,
 				62C38ABE255AADFD0095A473 /* Assets.xcassets */,
@@ -95,6 +105,7 @@
 			children = (
 				62C38AD0255AAF300095A473 /* RestVC.swift */,
 				62553B32255E43540058EFBE /* CafeVC.swift */,
+				625A74C5255ED72500565A21 /* detailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +238,7 @@
 				62C38ACD255AAED10095A473 /* customCell.swift in Sources */,
 				62553B33255E43540058EFBE /* CafeVC.swift in Sources */,
 				62C38AB3255AADFB0095A473 /* AppDelegate.swift in Sources */,
+				625A74C6255ED72500565A21 /* detailVC.swift in Sources */,
 				62C38AB5255AADFB0095A473 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,9 +9,8 @@ import UIKit
 import Alamofire
 
 class CafeVC: UITableViewController {
-    
+    let delegate = UIApplication.shared.delegate as? AppDelegate
     var value: NSArray = []
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +50,37 @@ class CafeVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! customCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath) as! customCell
+        let img_url = (value[indexPath.section] as! NSDictionary)["image_url"] as! String
+        let urlStr: String = "http://guji.c2a.kr\(img_url)"
+        let placeholder: UIImage? = UIImage.init(named: "placehoder.png")
         
         cell.cellimg.tag = indexPath.section
         
-
+        cell.cellimg.imageFromURL(urlString: urlStr, placeholder: placeholder) {
+            if cell.finishReload == false {
+                cell.finishReload = true
+                tableView.beginUpdates()
+                tableView.reloadSections(IndexSet.init(), with: UITableView.RowAnimation.automatic)
+                tableView.endUpdates()
+            }
+        }
+        
+        cell.name.text = (value[indexPath.section] as! NSDictionary)["name"] as? String
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.data = value[indexPath.section] as? NSDictionary
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "detailCafe" {
+//            delegate?.data = (value[cellnum] as! NSDictionary)["name"] as? String
+//            print(delegate?.data)
+//        }
+//    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
