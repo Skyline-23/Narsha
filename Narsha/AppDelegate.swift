@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import NMapsMap
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var data: NSDictionary?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        NMFAuthManager.shared().clientId = "xok93fe96c"
+        
         // Override point for customization after application launch.
         return true
     }

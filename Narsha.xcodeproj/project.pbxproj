@@ -14,7 +14,6 @@
 		62C38AB3255AADFB0095A473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C38AB2255AADFB0095A473 /* AppDelegate.swift */; };
 		62C38AB5255AADFB0095A473 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C38AB4255AADFB0095A473 /* SceneDelegate.swift */; };
 		62C38ABA255AADFB0095A473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C38AB8255AADFB0095A473 /* Main.storyboard */; };
-		62C38ABD255AADFB0095A473 /* Narsha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 62C38ABB255AADFB0095A473 /* Narsha.xcdatamodeld */; };
 		62C38ABF255AADFD0095A473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C38ABE255AADFD0095A473 /* Assets.xcassets */; };
 		62C38AC2255AADFD0095A473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C38AC0255AADFD0095A473 /* LaunchScreen.storyboard */; };
 		62C38ACD255AAED10095A473 /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C38ACC255AAED10095A473 /* customCell.swift */; };
@@ -31,7 +30,6 @@
 		62C38AB2255AADFB0095A473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62C38AB4255AADFB0095A473 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		62C38AB9255AADFB0095A473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		62C38ABC255AADFB0095A473 /* Narsha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Narsha.xcdatamodel; sourceTree = "<group>"; };
 		62C38ABE255AADFD0095A473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62C38AC1255AADFD0095A473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62C38AC3255AADFD0095A473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 				62C38ABE255AADFD0095A473 /* Assets.xcassets */,
 				62C38AC0255AADFD0095A473 /* LaunchScreen.storyboard */,
 				62C38AC3255AADFD0095A473 /* Info.plist */,
-				62C38ABB255AADFB0095A473 /* Narsha.xcdatamodeld */,
 			);
 			path = Narsha;
 			sourceTree = "<group>";
@@ -237,7 +234,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				62C38AD1255AAF300095A473 /* RestVC.swift in Sources */,
-				62C38ABD255AADFB0095A473 /* Narsha.xcdatamodeld in Sources */,
 				62C38ACD255AAED10095A473 /* customCell.swift in Sources */,
 				62553B33255E43540058EFBE /* CafeVC.swift in Sources */,
 				625A74D1255FCDB900565A21 /* MartVC.swift in Sources */,
@@ -391,6 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Narsha/Narsha.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q23JLSJCCV;
 				INFOPLIST_FILE = Narsha/Info.plist;
@@ -399,8 +396,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.narsha.guji;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.Narsha.guji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -412,6 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Narsha/Narsha.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q23JLSJCCV;
 				INFOPLIST_FILE = Narsha/Info.plist;
@@ -420,8 +419,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.narsha.guji;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hs.dgsw.Narsha.guji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,19 +449,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		62C38ABB255AADFB0095A473 /* Narsha.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				62C38ABC255AADFB0095A473 /* Narsha.xcdatamodel */,
-			);
-			currentVersion = 62C38ABC255AADFB0095A473 /* Narsha.xcdatamodel */;
-			path = Narsha.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 62C38AA7255AADFB0095A473 /* Project object */;
 }
