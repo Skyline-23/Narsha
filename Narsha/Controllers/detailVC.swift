@@ -54,11 +54,15 @@ class detailVC: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func navermapbtnclicked(_ sender: Any) {
-        if let url = URL(string: "nmap://place?lat=\((delegate?.data?["latitude"] as? Double)!)&lng=\((delegate?.data?["longitude"] as? Double)!)&name=\(namelbl.text!)&appname=kr.hs.dgsw.Narsha.guji") {
-            UIApplication.shared.open(url, options: [:])
+        let namestr = namelbl.text!
+        let utf8_str = namestr.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        if let url = URL(string: "nmap://place?lat=\((delegate?.data?["latitude"] as? Double)!)&lng=\((delegate?.data?["longitude"] as? Double)!)&name=\(utf8_str!)&appname=kr.hs.dgsw.Narsha.guji") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
         }
-    }
+    
     
 //    override func viewWillAppear(_ animated: Bool) {
 //        self.navigationItem.title = delegate?.detailtitle
