@@ -46,6 +46,12 @@ class detailVC: UIViewController {
         marker.position = NMGWebMercatorCoord(x: location_x!, y: location_y!).toLatLng()
         marker.mapView = mapView
         marker.captionText = (delegate?.data!["name"] as? String)!
+        let schoolmarker = NMFMarker()
+        schoolmarker.position = NMGWebMercatorCoord(x: 14294906.8985458, y: 4254359.4405623).toLatLng()
+        schoolmarker.captionText = "학교"
+        schoolmarker.iconImage = NMF_MARKER_IMAGE_BLACK
+        schoolmarker.iconTintColor = UIColor.brown
+        schoolmarker.mapView = mapView
         mapView.setLayerGroup(NMF_LAYER_GROUP_TRANSIT, isEnabled: true)
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGWebMercatorCoord(x: location_x!, y: location_y!).toLatLng())
         mapView.moveCamera(cameraUpdate)
@@ -57,11 +63,24 @@ class detailVC: UIViewController {
     
     @IBAction func navermapbtnclicked(_ sender: Any) {
         let namestr = namelbl.text!
+        // utf8 인코딩 변환
         let utf8_str = namestr.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        if let url = URL(string: "nmap://place?lat=\((delegate?.data?["latitude"] as? Double)!)&lng=\((delegate?.data?["longitude"] as? Double)!)&name=\(utf8_str!)&appname=kr.hs.dgsw.Narsha.guji") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
+        // url String 설정
+        let url = URL(string: "nmap://place?lat=\((delegate?.data?["latitude"] as? Double)!)&lng=\((delegate?.data?["longitude"] as? Double)!)&name=\(utf8_str!)&appname=kr.hs.dgsw.Narsha.guji")!
+        // 앱스토어 URL 설정
+        let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")!
+        
+        // 만약 url을 열수 있다면,
+        if UIApplication.shared.canOpenURL(url) {
+            // url을 오픈
+            UIApplication.shared.open(url)
+            //만약 아니라면
+        } else {
+            // 앱스토어로 가는 url을 오픈
+            UIApplication.shared.open(appStoreURL)
         }
+        
+    }
     
     
 //    override func viewWillAppear(_ animated: Bool) {
